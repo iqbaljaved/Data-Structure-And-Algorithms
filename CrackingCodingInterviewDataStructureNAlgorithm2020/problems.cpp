@@ -3,6 +3,9 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include <stack>
+#include <vector>
+
 
 void help(void)
 {
@@ -39,7 +42,51 @@ int lengthOfLastWord(std::string str)
 }
 
 
-std::string reverseString(std::string str)
+std::string reverseStringUsingStack (std::string  str)
 {
+	std::stack <char> s;
+
+	for(int i=0; i<str.size(); i++)
+		s.push(str.at(i));
+
+	for (int i = 0; i < str.size(); i++) {
+ 		str.at(i) = s.top(); 
+		s.pop();
+	}
+	return str;
+}
+
+std::string reverseStringUsingTwoPtr(std::string  str)
+{
+	//std::string::iterator startItr = str.begin();
+	//std::string::iterator endItr  = str.end();
+	int start = 0;
+	int end   = str.size()-1;
+
+	//std::cout << "str : " << str << std::endl;
+	while(start<end)
+	{
+		char c = str[start];
+		str.at(start) = str.at(end );
+		str.at(end) = c;
+
+		start++; end--;
+ 	}
+ 	return str;
+}
+
+
+std::string reverseStringUsingTwoItr(std::string  str)
+{
+	std::string::iterator startItr = str.begin();
+	std::string::iterator endItr   = str.end()-1;
+ 
+ 	while (startItr<endItr)
+	{
+		char c = *startItr;
+		*startItr  = *endItr;
+		*endItr = c;
+ 		startItr++; endItr--;
+	}
 	return str;
 }

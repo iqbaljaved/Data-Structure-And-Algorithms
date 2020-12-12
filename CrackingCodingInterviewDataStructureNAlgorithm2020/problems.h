@@ -6,5 +6,9 @@
 
 void help(void);
 int lengthOfLastWord(std::string str);
-std::string reverseString(std::string str);
+std::string reverseStringUsingStack(std::string  str);
+std::string reverseStringUsingTwoPtr(std::string  str);
+std::string reverseStringUsingTwoItr(std::string  str);
+
+
 

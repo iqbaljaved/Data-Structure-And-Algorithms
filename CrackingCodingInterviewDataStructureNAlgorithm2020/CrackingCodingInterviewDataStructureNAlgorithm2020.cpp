@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "problems.h"
+#include <string>
 
 
 
@@ -19,8 +20,16 @@ int main()
 	std::cout << "lengthOfLastWord : " << len << std::endl;
 
 	//section 2.
-	std::string revstr(reverseString(str));
-	std::cout  << "reverseString : " << str << " --> " << revstr << std::endl;
+	std::string revstr(reverseStringUsingStack(str));
+	std::cout  << "reverseString : " << str << " : " << revstr << std::endl;
+
+	//std::string revstr(reverseStringUsingTwoPtr(revstr));
+	str = reverseStringUsingTwoPtr(revstr);
+	std::cout << "reverseString : " << revstr << " : " << str << std::endl;
+	
+	revstr = reverseStringUsingTwoItr(str);
+	std::cout << "reverseString : " << str << " : " << revstr << std::endl;
+
 
     return 0;
 }
