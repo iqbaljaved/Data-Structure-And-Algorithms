@@ -74,7 +74,7 @@ std::string reverseStringUsingTwoPtr(std::string  str)
  	}
  	return str;
 }
-
+ 
 
 std::string reverseStringUsingTwoItr(std::string  str)
 {
@@ -89,4 +89,27 @@ std::string reverseStringUsingTwoItr(std::string  str)
  		startItr++; endItr--;
 	}
 	return str;
+}
+
+std::string longestCommPrefix(std::vector <std::string> strArr)
+{
+	std::string prefixStr("");
+	for (int n = 0; n < strArr.size(); n++)
+		if (strArr[n].size() <= 0)
+			return prefixStr;
+
+ 	for (int i = 0; i<strArr[0].size(); i++) 
+	{ 
+		for (int n = 0; n < strArr.size(); n++)
+		{
+			if( (i>strArr[n].size()) || (strArr[0].at(i) != strArr[n].at(i)) )
+			{
+				return prefixStr;
+			}
+  		}
+		prefixStr.push_back(strArr[0].at(i));
+ 	}
+	
+
+	return prefixStr;
 }

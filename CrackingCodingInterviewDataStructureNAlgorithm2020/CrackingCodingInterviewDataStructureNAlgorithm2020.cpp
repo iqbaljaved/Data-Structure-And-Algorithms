@@ -5,6 +5,7 @@
 #include <iostream>
 #include "problems.h"
 #include <string>
+#include <vector>
 
 
 
@@ -29,6 +30,12 @@ int main()
 	
 	revstr = reverseStringUsingTwoItr(str);
 	std::cout << "reverseString : " << str << " : " << revstr << std::endl;
+
+	std::vector <std::string> strArr;
+	strArr.push_back("javed");
+	strArr.push_back("jawed");
+	strArr.push_back("");
+	std::cout << "longest common prefix in arr of strings : " <<   longestCommPrefix(strArr) << std::endl;
 
 
     return 0;
